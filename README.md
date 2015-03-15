@@ -1,5 +1,7 @@
 # SmallFlux
 
+[![Build Status](https://travis-ci.org/WelcomWeb/small-flux.svg?branch=master)](https://travis-ci.org/WelcomWeb/small-flux)
+
 SmallFlux is an event based, really small, library for Flux-like development. It has a small footprint, while yet being able to handle most use cases for an application striving to make use of the Flux pattern.
 
 ## Installation
