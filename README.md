@@ -2,6 +2,14 @@
 
 SmallFlux is an event based, really small, library for Flux-like development. It has a small footprint, while yet being able to handle most use cases for an application striving to make use of the Flux pattern.
 
+## Installation
+
+    npm install --save-dev small-flux
+
+## Usage
+
+    var SmallFlux = require('small-flux');
+
 ## Actions
 An `Action` is simply just a payload being passed around between components and `Store`s.
 
