@@ -7,10 +7,11 @@
 *
 * @author Björn Wikström <bjorn@welcom.se>
 * @license Apache License 2.0 <http://opensource.org/licenses/Apache-2.0>
-* @version 1.0.0
+* @version 1.1.0
 * @copyright Welcom Web i Göteborg AB 2015
 */
-var EventManager = require('./events/Manager');
+var EventManager = require('./events/Manager'),
+	Utils = require('./utils/Utils');
 
 /*
  * Class constructor
@@ -20,6 +21,7 @@ var EventManager = require('./events/Manager');
  */
 var Action = function (name) {
 	this.name = name;
+	this.id = Utils.guid();
 };
 /*
  * Trigger the event, notifying any listeners.
@@ -28,7 +30,7 @@ var Action = function (name) {
  * @returns 		{Void}
  */
 Action.prototype.trigger = function (payload) {
-	EventManager.trigger(this.name, payload);
+	EventManager.trigger(this.id, payload);
 };
 
 module.exports = Action;
