@@ -1,5 +1,6 @@
 jest.dontMock('../small-flux');
 jest.dontMock('../src/events/Manager');
+jest.dontMock('../src/utils/Utils');
 jest.dontMock('../src/SmallFlux');
 jest.dontMock('../src/Action');
 jest.dontMock('../src/Store');
