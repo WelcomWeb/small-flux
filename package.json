@@ -1,6 +1,6 @@
 {
   "name": "small-flux",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Small-Flux is an event based, really small, library for Flux-like development. It has a small footprint, while yet being able to handle most use cases for an application striving to make use of Flux.",
   "repository": {
     "url": "git://github.com/WelcomWeb/small-flux.git"
