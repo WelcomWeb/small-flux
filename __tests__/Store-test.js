@@ -105,6 +105,28 @@ describe('Store', function () {
         expect(mock.callback).toHaveBeenCalled();
     })
 
+    it('will notify observers with a payload when an update occurs', function () {
+        var Flux = require('../small-flux');
+        var MyAction = Flux.createAction('myAction');
+        var Store = Flux.createStore({
+            initialize: function () {
+                this.observe(MyAction, this.update);
+            },
+            update: function () {
+                this.notify(MyAction);
+            }
+        });
+
+        var mock = {
+            callback: function (payload) {}
+        };
+        spyOn(mock, 'callback');
+        Store.attach(mock.callback);
+        MyAction.trigger();
+
+        expect(mock.callback).toHaveBeenCalledWith(MyAction);
+    })
+
     it('will not notify unregistered observers when an update occurs', function () {
         var Flux = require('../small-flux');
         var MyAction = Flux.createAction('myAction');

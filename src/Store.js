@@ -8,7 +8,7 @@
 *
 * @author Björn Wikström <bjorn@welcom.se>
 * @license Apache License 2.0 <http://opensource.org/licenses/Apache-2.0>
-* @version 1.1.0
+* @version 1.2.0
 * @copyright Welcom Web i Göteborg AB 2015
 */
 var EventManager = require('./events/Manager'),
@@ -58,7 +58,7 @@ Store.prototype.observe = function (action, callback) {
 /*
  * Detach a callback from an action event.
  *
- * @param Action    {Action}    An instance of an action
+ * @param action    {Action}    An instance of an action
  * @param callback  {Function}  The subscribing callback
  * @returns         {Void}
  */
@@ -69,10 +69,11 @@ Store.prototype.forget = function (action, callback) {
  * A helper method to notify all listening
  * subscribers of a change.
  *
+ * @param payload   {Mixed}     Option payload to be passed to listeners
  * @returns         {Void}
  */
-Store.prototype.notify = function () {
-    EventManager.trigger(this.id);
+Store.prototype.notify = function (payload) {
+    EventManager.trigger(this.id, payload);
 };
 /*
  * Attach a listener for changes in a `Store`
