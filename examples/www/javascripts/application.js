@@ -1,8 +1,8 @@
 var React = require('react'),
-	TodoView = require('./views/Todo');
+    TodoView = require('./views/Todo');
 
 window.addEventListener('load', function onpageload(event) {
-	window.removeEventListener('load', onpageload, false);
+    window.removeEventListener('load', onpageload, false);
 
-	React.render(<TodoView />, document.getElementById('todo-application'));
+    React.render(<TodoView />, document.getElementById('todo-application'));
 }, false);

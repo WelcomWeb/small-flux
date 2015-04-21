@@ -11,26 +11,26 @@
 * @copyright Welcom Web i Göteborg AB 2015
 */
 var EventManager = require('./events/Manager'),
-	Utils = require('./utils/Utils');
+    Utils = require('./utils/Utils');
 
 /*
  * Class constructor
  *
- * @param name 		{String} 	The name of the action
- * @returns 		{Action}
+ * @param name      {String}    The name of the action
+ * @returns         {Action}
  */
 var Action = function (name) {
-	this.name = name;
-	this.id = Utils.guid();
+    this.name = name;
+    this.id = Utils.guid();
 };
 /*
  * Trigger the event, notifying any listeners.
  *
- * @param payload 	{Mixed} 	An optional payload for the event
- * @returns 		{Void}
+ * @param payload   {Mixed}     An optional payload for the event
+ * @returns         {Void}
  */
 Action.prototype.trigger = function (payload) {
-	EventManager.trigger(this.id, payload);
+    EventManager.trigger(this.id, payload);
 };
 
 module.exports = Action;
