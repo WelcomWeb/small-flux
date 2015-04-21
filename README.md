@@ -61,6 +61,10 @@ A `Store` is a central unit which keeps track of `Action`s, and is a data layer 
 	// And later you can detach it, so no changes are reported to `MyStoreListener`
 	MyStore.detach(MyStoreListener);
 
+## Demo
+
+You can clone this repository and run the <a href="https://github.com/WelcomWeb/small-flux/blob/master/examples/">example files</a>.
+
 ## Working example
 
 *index.html*

@@ -1,0 +1,80 @@
+.view {
+	width: 50%;
+	margin: 50px auto 0 auto;
+
+	.todo-counter {
+		font-size: .7em;
+		font-style: italic;
+		text-align: center;
+	}
+
+	hr {
+		margin: 0;
+		border: 0;
+		border-top: 1px solid #999;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			border-top: 1px solid #bbb;
+
+			h3 {
+				cursor: pointer;
+				margin: 3px 6px;
+			}
+
+			&.open {
+				background-color: #f4f4f4;
+				.settings, .description {
+					display: block;
+				}
+			}
+			&.closed {
+				.settings, .description {
+					display: none;
+				}
+			}
+		}
+
+		.description {
+			padding: 0 10px;
+		}
+		.settings {
+			padding: 10px;
+		}
+		.created_at {
+			font-weight: normal;
+			font-size: 0.8em;
+		}
+
+		.settings {
+			padding: 10px;
+			background-color: #e5e5e5;
+			border-top: 1px solid #ddd;
+		}
+
+		a {
+			text-decoration: none;
+			&.left {
+				float: left;
+			}
+			&.right {
+				float: right;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.view {
+		width: 100%;
+
+		.todo-counter {
+			text-align: left;
+		}
+	}
+}
