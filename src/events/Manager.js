@@ -8,7 +8,7 @@
 *
 * @author Björn Wikström <bjorn@welcom.se>
 * @license Apache License 2.0 <http://opensource.org/licenses/Apache-2.0>
-* @version 1.2.0
+* @version 1.3
 * @copyright Welcom Web i Göteborg AB 2015
 */
 var EventManager = function () {
@@ -63,8 +63,10 @@ var EventManager = function () {
                 return;
             }
 
-            for (var i = 0; i < queue[event].length; i++) {
-                queue[event][i](payload);
+            // Create a local copy to allow queue changes during runtime
+            var callbacks = Array.apply(queue[event], queue[event]);
+            for (var i = 0; i < callbacks.length; i++) {
+                callbacks[i](payload);
             }
         }
     };
